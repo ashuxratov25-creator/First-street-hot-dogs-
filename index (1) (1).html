@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIRST STREET HOT DOGS</title>
+<style>
+:root{--bg:#101114;--p:#1b1d22;--line:#343840;--y:#ffd21f;--t:#f5f5f5;--m:#aeb3bd}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:15px system-ui}
+header{padding:16px 20px;background:#17181c;border-bottom:1px solid var(--line);font-weight:900}
+header b{color:var(--y)}.layout{display:grid;grid-template-columns:205px 1fr;min-height:calc(100vh - 55px)}
+nav{padding:12px;background:#15161a;border-right:1px solid var(--line)}
+nav button{display:block;width:100%;padding:12px;margin:3px 0;border:0;border-radius:8px;background:none;color:var(--m);text-align:left;font:inherit}
+nav button.active,nav button:hover{background:#2a2c31;color:var(--y)}
+main{padding:22px;max-width:1100px;width:100%;margin:auto}.page{display:none}.page.active{display:block}
+h1{font-size:25px;margin:0 0 6px}.sub,.muted{color:var(--m)}.sub{margin-bottom:20px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card,.panel{background:var(--p);border:1px solid var(--line);border-radius:12px;padding:16px}
+.metric{font-size:24px;font-weight:800;margin-top:8px}.notice{background:#2c2715;border:1px solid #6a5819;color:#f5df91;padding:12px;border-radius:9px;margin:14px 0}
+h2{font-size:17px}table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px 7px;border-bottom:1px solid var(--line)}th{color:var(--m)}
+button.primary{background:var(--y);color:#111;border:0;border-radius:8px;padding:10px 14px;font-weight:800}
+input,select{display:block;width:100%;padding:10px;margin:6px 0 12px;background:#111318;border:1px solid var(--line);border-radius:8px;color:white}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}nav{display:flex;overflow:auto}nav button{white-space:nowrap;width:auto}.cards{grid-template-columns:1fr 1fr}main{padding:15px}}
+</style></head><body>
+<header>FIRST STREET <b>HOT DOGS</b>　<small>ADMIN PANEL • DEMO</small></header>
+<div class="layout"><nav>
+<button class="active" data-page="home">🏠 Bosh sahifa</button><button data-page="orders">🧾 Buyurtmalar</button>
+<button data-page="menu">🌭 Menyu</button><button data-page="stock">📦 Ombor</button>
+<button data-page="expenses">💳 Xarajatlar</button><button data-page="staff">👥 Xodimlar</button>
+<button data-page="reports">📊 Hisobotlar</button><button data-page="settings">⚙️ Sozlamalar</button>
+</nav><main>
+<section id="home" class="page active"><h1>Boshqaruv paneli</h1><div class="sub">Kundalik boshqaruv</div>
+<div class="notice">Bu hozircha frontend prototipi. Supabase ulanmagan, shuning uchun haqiqiy savdo raqamlari ko‘rsatilmaydi.</div>
+<div class="cards"><div class="card">Bugungi buyurtmalar<div class="metric">—</div><span class="muted">Ulanish kutilmoqda</span></div>
+<div class="card">Bugungi tushum<div class="metric">—</div><span class="muted">UZS</span></div>
+<div class="card">Ombor ogohlantirishlari<div class="metric">—</div><span class="muted">Ulanish kutilmoqda</span></div>
+<div class="card">Foyda<div class="metric">—</div><span class="muted">Hisoblash uchun ma’lumot kerak</span></div></div>
+<div class="panel" style="margin-top:14px"><h2>Tizim modullari</h2>Kassa · Menyu · Ombor · Xarajatlar · Xodimlar · Hisobotlar</div></section>
+<section id="orders" class="page"><h1>Buyurtmalar</h1><div class="sub">Kassadagi savdolar</div><div class="notice">Buyurtmani saqlash Supabase bilan ulashdan keyin yoqiladi.</div><div class="panel"><h2>Yangi buyurtma</h2><label>Mahsulot<select><option>Classic Hot Dog — kichik</option><option>Classic Hot Dog — katta</option><option>Cheese Hot Dog — kichik</option><option>Cheese Hot Dog — katta</option><option>Qazili Hot Dog — kichik</option><option>Qazili Hot Dog — katta</option><option>Shashlik Hot Dog — 1 dona</option><option>Shashlik Hot Dog — 2 dona</option></select></label><label>To‘lov turi<select><option>Naqd</option><option>Karta</option><option>Click / Payme</option></select></label><button class="primary" disabled>Saqlash (ulanish kutilmoqda)</button></div></section>
+<section id="menu" class="page"><h1>Menyu</h1><div class="sub">So‘nggi kelishilgan narxlar</div><div class="panel"><table><tr><th>Mahsulot</th><th>Narx</th></tr>
+<tr><td>Classic Hot Dog — kichik</td><td>12 000 so‘m</td></tr><tr><td>Classic Hot Dog — katta</td><td>20 000 so‘m</td></tr>
+<tr><td>Cheese Hot Dog — kichik</td><td>15 000 so‘m</td></tr><tr><td>Cheese Hot Dog — katta</td><td>25 000 so‘m</td></tr>
+<tr><td>Qazili Hot Dog — kichik</td><td>18 000 so‘m</td></tr><tr><td>Qazili Hot Dog — katta</td><td>25 000 so‘m</td></tr>
+<tr><td>Shashlik Hot Dog — 1 dona</td><td>26 000 so‘m</td></tr><tr><td>Shashlik Hot Dog — 2 dona</td><td>40 000 so‘m</td></tr></table></div></section>
+<section id="stock" class="page"><h1>Ombor</h1><div class="sub">Kirim, chiqim va qoldiq</div><div class="notice">Birliklar: kg, litr, dona va pachka. Haqiqiy qoldiq baza ulangandan keyin chiqadi.</div><div class="panel"><div class="formgrid"><label>Mahsulot<input placeholder="Masalan: Tim sosiska"></label><label>Harakat<select><option>Kirim</option><option>Chiqim</option></select></label><label>Miqdor<input type="number"></label><label>Birlik<select><option>dona</option><option>kg</option><option>litr</option><option>pachka</option></select></label></div><button class="primary" disabled>Saqlash (ulanish kutilmoqda)</button></div></section>
+<section id="expenses" class="page"><h1>Xarajatlar</h1><div class="panel"><label>Xarajat nomi<input placeholder="Mahsulot xaridi"></label><label>Summa (so‘m)<input type="number"></label><button class="primary" disabled>Saqlash (ulanish kutilmoqda)</button></div></section>
+<section id="staff" class="page"><h1>Xodimlar</h1><div class="notice">Admin, kassir va ishchilar ro‘yxati Auth hamda staff_profiles jadvali tekshirilgach ulanadi.</div></section>
+<section id="reports" class="page"><h1>Hisobotlar</h1><div class="panel"><div class="formgrid"><label>Boshlanish sanasi<input type="date"></label><label>Tugash sanasi<input type="date"></label></div><button class="primary" disabled>Hisobot (ulanish kutilmoqda)</button></div></section>
+<section id="settings" class="page"><h1>Sozlamalar</h1><div class="notice">Supabase URL va anon/public key keyingi bosqichda ulanadi. service_role kalitini GitHub yoki frontendga joylamang.</div><div class="panel">Ulanish holati: hali ulanmagan</div></section>
+</main></div>
+<script>
+const nav=[...document.querySelectorAll('nav button')];nav.forEach(b=>b.onclick=()=>{document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===b.dataset.page));nav.forEach(x=>x.classList.toggle('active',x===b))});
+</script></body></html>
